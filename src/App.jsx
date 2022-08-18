@@ -71,17 +71,19 @@ And here. | Okay. | I think we get it.
         <div  className='mb-5'>
           <label htmlFor="editor" className="block mb-2 text-sm font-medium text-gray-400">Write your markdown text</label>
           
-          <textarea id="editor" rows="4" className="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" defaultValue={placeholder} onChange={handleChange}></textarea>
+          <textarea id="editor" rows="6" className="block p-2.5 w-full text-sm rounded-lg border bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500" defaultValue={placeholder} onChange={handleChange}></textarea>
         </div>  
 
-        <div className='h-96'>
+        <div className='h-80'>
           <h5 className="block mb-2 text-sm font-medium text-gray-400 ">Preview</h5>
-          <div id="preview"
-            className='d-flex p-2.5 h-full bg-slate-200 rounded-lg overflow-auto'
-            dangerouslySetInnerHTML={
-              {__html: DOMPurify.sanitize(textInput)}
-            }
-            >
+          <div className="bg-slate-200 rounded-lg overflow-auto p-8 h-full">
+            <div id="preview"
+              className='prose prose-blue'
+              dangerouslySetInnerHTML={
+                {__html: DOMPurify.sanitize(textInput)}
+              }
+              >
+            </div>
           </div>
         </div>
 
